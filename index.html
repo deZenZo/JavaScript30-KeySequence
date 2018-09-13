@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Key Detection</title>
+  </head>
+  <body>
+    <div>Type the password</div>
+    <script>
+      const pressed = [];
+      const secretCode = "password";
+
+      window.addEventListener('keyup', (e) => {
+        console.log(e.key);
+        pressed.push(e.key);
+        pressed.splice(-secretCode.lenght - 1, pressed.length - secretCode.length);
+
+        if (pressed.join('').includes(secretCode)){
+          console.log('Ding Ding!');
+        }
+        console.log(pressed);
+      });
+    </script>
+  </body>
+
+
+</html>
